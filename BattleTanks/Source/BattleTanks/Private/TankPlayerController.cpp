@@ -15,7 +15,7 @@ void ATankPlayerController::BeginPlay()
 	{
 		UE_LOG(LogTemp, Warning, TEXT("PlayerController Possessing: %s"), *(ControlledTank->GetName())); //The "*" gets the contents of the location here. You get the location and * gets the contents
 	}
-	UE_LOG(LogTemp, Warning, TEXT("PlayerController Begin Play"))
+	UE_LOG(LogTemp, Warning, TEXT("PlayerController Begin Play"));
 }
 
 ATank* ATankPlayerController::GetControlledTank() const
