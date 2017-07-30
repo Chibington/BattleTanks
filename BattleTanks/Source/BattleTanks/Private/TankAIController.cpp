@@ -19,6 +19,16 @@ void ATankAIController::BeginPlay()
 	UE_LOG(LogTemp, Warning, TEXT("AIController Begin Play"));
 }
 
+void ATankAIController::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	if (GetPlayerTank())
+	{
+		//TODO move towards player
+		AiAimAt();
+		//Fire if ready
+	}
+}
 
 ATank* ATankAIController::GetControlledAi() const
 {
@@ -34,5 +44,12 @@ ATank * ATankAIController::GetPlayerTank() const
 	}
 	return Cast<ATank>(PlayerTank);///They change this later so keep an eye on it
 }
+
+void ATankAIController::AiAimAt()
+{
+	GetControlledAi()->AimAt(GetPlayerTank()->GetActorLocation());
+}
+
+
 
 
