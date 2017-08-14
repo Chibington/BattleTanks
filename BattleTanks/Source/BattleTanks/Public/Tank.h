@@ -17,6 +17,8 @@ public:
 	void AimAt(FVector HitLocation);
 
 	//void AiAimed(FVector PlayerLocation);
+	UFUNCTION(BlueprintCallable, Category = Setup)
+	void SetBarrelReference(UStaticMeshComponent* BarrelToSet);
 
 protected: 
 	//Componenets are placed in here because they wont be used by the other functions and its not private because it has to be called later by a UPROPERTY
